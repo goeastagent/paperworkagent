@@ -1,0 +1,17 @@
+project:
+  name: "paperworkagent"
+  domain: "biomedical"
+
+llm:
+  temperature: 0.1
+  timeout_seconds: 30
+  max_retries: 3
+
+retrieval:
+  providers: ["openalex", "crossref", "europepmc"]
+  max_papers_per_claim: 20
+  expand_citations: true
+
+cache:
+  enabled: true
+  directory: ".cache"
