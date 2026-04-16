@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import logging
 
-from paperworkagent.explore.cache import FileCache
-from paperworkagent.explore.llm import LLMClient, LLMCallError, LLMParseError
+from paperworkagent.common.cache import FileCache
+from paperworkagent.common.llm import LLMClient, LLMCallError, LLMParseError
 from paperworkagent.explore.models import ClaimContext
 
 logger = logging.getLogger(__name__)

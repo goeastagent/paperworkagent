@@ -6,8 +6,6 @@ from typing import Any
 
 import litellm
 
-from paperworkagent.explore.config import ExploreSettings
-
 logger = logging.getLogger(__name__)
 
 litellm.drop_params = True
@@ -16,8 +14,18 @@ litellm.drop_params = True
 class LLMClient:
     """Thin wrapper around litellm with JSON parsing and retry."""
 
-    def __init__(self, settings: ExploreSettings) -> None:
-        self._settings = settings
+    def __init__(
+        self,
+        *,
+        api_key: str,
+        default_model: str,
+        max_calls: int,
+        timeout: int,
+    ) -> None:
+        self._api_key = api_key
+        self._default_model = default_model
+        self._max_calls = max_calls
+        self._timeout = timeout
         self._call_count = 0
 
     @property
@@ -37,11 +45,11 @@ class LLMClient:
         Raises ``LLMParseError`` when the response is not valid JSON.
         Raises ``LLMCallError`` on API-level failures.
         """
-        effective_model = model or self._settings.llm.model
+        effective_model = model or self._default_model
         effective_temp = temperature if temperature is not None else 0.1
 
-        if self._call_count >= self._settings.max_llm_calls:
-            raise LLMCallError(f"LLM call limit reached ({self._settings.max_llm_calls})")
+        if self._call_count >= self._max_calls:
+            raise LLMCallError(f"LLM call limit reached ({self._max_calls})")
 
         try:
             self._call_count += 1
@@ -53,8 +61,8 @@ class LLMClient:
                 ],
                 temperature=effective_temp,
                 response_format={"type": "json_object"},
-                api_key=self._settings.llm.api_key,
-                timeout=self._settings.llm.query_generation.timeout_seconds,
+                api_key=self._api_key,
+                timeout=self._timeout,
             )
         except Exception as exc:
             raise LLMCallError(f"LLM API call failed: {exc}") from exc

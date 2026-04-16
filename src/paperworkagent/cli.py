@@ -69,5 +69,47 @@ def explore(
     typer.echo(f"Output written to {out}")
 
 
+@app.command()
+def extract(
+    paper: Path = typer.Option(..., "--paper", help="Markdown 논문 초안 파일 경로"),
+    out: Path = typer.Option("claims.json", "--out", help="출력 JSON 파일 경로"),
+    verbose: bool = typer.Option(False, "--verbose", "-v", help="상세 로그 출력"),
+) -> None:
+    """논문 초안에서 reference가 필요한 claim을 추출한다."""
+    logging.basicConfig(
+        level=logging.DEBUG if verbose else logging.INFO,
+        format="%(asctime)s %(name)s %(levelname)s %(message)s",
+    )
+
+    from paperworkagent.extract.config import load_settings
+    from paperworkagent.extract.extractor import extract_claims as run_extract
+    from paperworkagent.extract.models import ExtractInput
+
+    try:
+        settings = load_settings()
+    except RuntimeError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(1)
+
+    inp = ExtractInput(paper_path=str(paper))
+    result = asyncio.run(run_extract(inp, settings))
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        result.model_dump_json(indent=2, exclude_none=True),
+        encoding="utf-8",
+    )
+    typer.echo(f"Status: {result.status.value}")
+    typer.echo(f"Claims extracted: {len(result.claims)}")
+    if result.issues:
+        typer.echo(f"Issues: {len(result.issues)}")
+        for issue in result.issues:
+            typer.echo(f"  - [{issue.type.value}] {issue.message}")
+    if result.paper_title:
+        typer.echo(f"Paper: {result.paper_title}")
+    typer.echo(f"Duration: {result.duration_seconds}s")
+    typer.echo(f"Output written to {out}")
+
+
 if __name__ == "__main__":
     app()

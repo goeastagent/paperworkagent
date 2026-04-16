@@ -6,7 +6,7 @@ import logging
 from dataclasses import dataclass
 
 from paperworkagent.explore.dedup import get_paper_identifier
-from paperworkagent.explore.llm import LLMClient, LLMCallError, LLMParseError
+from paperworkagent.common.llm import LLMClient, LLMCallError, LLMParseError
 from paperworkagent.explore.models import (
     ExploredPaper,
     PaperData,

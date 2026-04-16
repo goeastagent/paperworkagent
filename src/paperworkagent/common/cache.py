@@ -23,10 +23,8 @@ class FileCache:
 
         base_dir/
         ├── provider/openalex/{hash}.json
-        ├── provider/europepmc/{hash}.json
-        ├── provider/crossref/{hash}.json
-        └── llm/query_generation/{hash}.json
-            llm/relevance_filter/{hash}.json
+        ├── llm/query_generation/{hash}.json
+        └── llm/{hash}.json
     """
 
     def __init__(self, base_dir: Path, *, enabled: bool = True) -> None:

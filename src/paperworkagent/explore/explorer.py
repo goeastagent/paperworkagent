@@ -6,10 +6,10 @@ import asyncio
 import logging
 import time
 
-from paperworkagent.explore.cache import FileCache
+from paperworkagent.common.cache import FileCache
+from paperworkagent.common.llm import LLMClient, LLMCallError
 from paperworkagent.explore.config import ExploreSettings
 from paperworkagent.explore.dedup import PaperDeduplicator
-from paperworkagent.explore.llm import LLMClient, LLMCallError
 from paperworkagent.explore.models import (
     ExploreInput,
     ExploreIssue,
@@ -68,7 +68,12 @@ async def explore(inp: ExploreInput, settings: ExploreSettings) -> ExploreOutput
     search_log: list[SearchRound] = []
 
     cache = FileCache(settings.cache.directory, enabled=settings.cache.enabled)
-    llm = LLMClient(settings)
+    llm = LLMClient(
+        api_key=settings.llm.api_key,
+        default_model=settings.llm.model,
+        max_calls=settings.max_llm_calls,
+        timeout=settings.llm.query_generation.timeout_seconds,
+    )
     providers = _build_providers(settings)
     semaphore = asyncio.Semaphore(settings.providers.semaphore_limit)
 
