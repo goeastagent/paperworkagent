@@ -62,19 +62,34 @@ def _build_providers(settings: ExploreSettings) -> list[BaseProvider]:
     return [builders[name] for name in settings.providers.enabled if name in builders]
 
 
-async def explore(inp: ExploreInput, settings: ExploreSettings) -> ExploreOutput:
-    """Run the full exploration pipeline for a single claim."""
+async def explore(
+    inp: ExploreInput,
+    settings: ExploreSettings,
+    *,
+    providers: list[BaseProvider] | None = None,
+    llm: LLMClient | None = None,
+    cache: FileCache | None = None,
+) -> ExploreOutput:
+    """Run the full exploration pipeline for a single claim.
+
+    When *providers*, *llm*, or *cache* are supplied the caller owns their
+    lifecycle (the function will **not** close providers it did not create).
+    """
     issues: list[ExploreIssue] = []
     search_log: list[SearchRound] = []
 
-    cache = FileCache(settings.cache.directory, enabled=settings.cache.enabled)
-    llm = LLMClient(
-        api_key=settings.llm.api_key,
-        default_model=settings.llm.model,
-        max_calls=settings.max_llm_calls,
-        timeout=settings.llm.query_generation.timeout_seconds,
-    )
-    providers = _build_providers(settings)
+    owns_providers = providers is None
+    if cache is None:
+        cache = FileCache(settings.cache.directory, enabled=settings.cache.enabled)
+    if llm is None:
+        llm = LLMClient(
+            api_key=settings.llm.api_key,
+            default_model=settings.llm.model,
+            max_calls=settings.max_llm_calls,
+            timeout=settings.llm.query_generation.timeout_seconds,
+        )
+    if providers is None:
+        providers = _build_providers(settings)
     semaphore = asyncio.Semaphore(settings.providers.semaphore_limit)
 
     try:
@@ -255,8 +270,9 @@ async def explore(inp: ExploreInput, settings: ExploreSettings) -> ExploreOutput
         return _make_output(status, issues, final_papers, search_log, summary)
 
     finally:
-        for provider in providers:
-            await provider.close()
+        if owns_providers:
+            for provider in providers:
+                await provider.close()
 
 
 async def _generate_summary(
