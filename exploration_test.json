@@ -1,0 +1,170 @@
+{
+  "status": "success",
+  "issues": [],
+  "papers": [
+    {
+      "doi": "10.1186/s40537-020-00369-8",
+      "pmid": "33169094",
+      "pmcid": "PMC7610170",
+      "title": "CatBoost for big data: an interdisciplinary review",
+      "authors": [
+        "John Hancock",
+        "Taghi M. Khoshgoftaar"
+      ],
+      "year": 2020,
+      "abstract": "Gradient Boosted Decision Trees (GBDT's) are a powerful tool for classification and regression tasks in Big Data. Researchers should be familiar with the strengths and weaknesses of current implementations of GBDT's in order to use them effectively and make successful contributions. CatBoost is a member of the family of GBDT machine learning ensemble techniques. Since its debut in late 2018, researchers have successfully used CatBoost for machine learning studies involving Big Data. We take this opportunity to review recent research on CatBoost as it relates to Big Data, and learn best practices from studies that cast CatBoost in a positive light, as well as studies where CatBoost does not outshine other techniques, since we can learn lessons from both types of scenarios. Furthermore, as a Decision Tree based algorithm, CatBoost is well-suited to machine learning tasks involving categorical, heterogeneous data. Recent work across multiple disciplines illustrates CatBoost's effectiveness and shortcomings in classification and regression tasks. Another important issue we expose in literature on CatBoost is its sensitivity to hyper-parameters and the importance of hyper-parameter tuning. One contribution we make is to take an interdisciplinary approach to cover studies related to CatBoost in a single work. This provides researchers an in-depth understanding to help clarify proper application of CatBoost in solving problems. To the best of our knowledge, this is the first survey that studies all works related to CatBoost in a single publication.",
+      "venue": "Journal Of Big Data",
+      "relevance": "high",
+      "relevance_reason": "CatBoost의 핵심 설계(범주형/이질적 특성 처리, 과적합 이슈 및 구현 특성)를 폭넓게 정리한 리뷰로 ordered boosting·대칭 트리 등 CatBoost의 특징을 뒷받침하는 근거로 적절하다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.7717/peerj-cs.2829/table-102",
+      "title": "Algorithm 2 : Ordered boosting algorithm.",
+      "authors": [],
+      "year": 2025,
+      "relevance": "high",
+      "relevance_reason": "제목 자체가 'Ordered boosting algorithm'으로 CatBoost의 ordered boosting을 직접 정의/제시하는 자료로서 해당 주장(ordered boosting 사용)의 핵심 근거가 됩니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "title": "CatBoost: unbiased boosting with categorical features",
+      "authors": [
+        "L. Ostroumova",
+        "Gleb Gusev",
+        "A. Vorobev",
+        "Anna Veronika Dorogush",
+        "Andrey Gulin"
+      ],
+      "year": 2017,
+      "venue": "Neural Information Processing Systems",
+      "relevance": "high",
+      "relevance_reason": "CatBoost의 원 논문으로 범주형/이질적 특성 처리와 ordered boosting(편향 감소) 등 핵심 아이디어를 직접 제시하므로 해당 주장에 필수 인용입니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.4236/jdaip.2023.114025",
+      "title": "A Hybrid Ensemble Learning Approach Utilizing Light Gradient Boosting Machine and Category Boosting Model for Lifestyle-Based Prediction of Type-II Diabetes Mellitus",
+      "authors": [
+        "Mahadi Nagassou",
+        "Ronald Waweru Mwangi",
+        "Euna Nyarige"
+      ],
+      "year": 2023,
+      "abstract": "Addressing classification and prediction challenges, tree ensemble models have gained significant importance. Boosting ensemble techniques are commonly employed for forecasting Type-II diabetes mellitus. Light Gradient Boosting Machine (LightGBM) is a widely used algorithm known for its leaf growth strategy, loss reduction, and enhanced training precision. However, LightGBM is prone to overfitting. In contrast, CatBoost utilizes balanced base predictors known as decision tables, which mitigate overfitting risks and significantly improve testing time efficiency. CatBoost’s algorithm structure counteracts gradient boosting biases and incorporates an overfitting detector to stop training early. This study focuses on developing a hybrid model that combines LightGBM and CatBoost to minimize overfitting and improve accuracy by reducing variance. For the purpose of finding the best hyperparameters to use with the underlying learners, the Bayesian hyperparameter optimization method is used. By fine-tuning the regularization parameter values, the hybrid model effectively reduces variance (overfitting). Comparative evaluation against LightGBM, CatBoost, XGBoost, Decision Tree, Random Forest, AdaBoost, and GBM algorithms demonstrates that the hybrid model has the best F1-score (99.37%), recall (99.25%), and accuracy (99.37%). Consequently, the proposed framework holds promise for early diabetes prediction in the healthcare industry and exhibits potential applicability to other datasets sharing similarities with diabetes.",
+      "venue": "Journal of Data Analysis and Information Processing",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost가 과적합 위험을 완화한다는 서술을 포함해 claim의 ‘reduced overfitting’ 부분에 간접적으로 도움은 되지만, ordered boosting·대칭 트리 같은 정확한 기술적 근거를 제공하진 않습니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.3390/math13040587",
+      "title": "Foundations and Innovations in Data Fusion and Ensemble Learning for Effective Consensus",
+      "authors": [
+        "Ke-Lin Du",
+        "Rengong Zhang",
+        "Bingchun Jiang",
+        "Jie Zeng",
+        "Jiabin Lu"
+      ],
+      "year": 2025,
+      "abstract": "Ensemble learning and data fusion techniques play a crucial role in modern machine learning, enhancing predictive performance, robustness, and generalization. This paper provides a comprehensive survey of ensemble methods, covering foundational techniques such as bagging, boosting, and random forests, as well as advanced topics including multiclass classification, multiview learning, multiple kernel learning, and the Dempster–Shafer theory of evidence. We present a comparative analysis of ensemble learning and deep learning, highlighting their respective strengths, limitations, and synergies. Additionally, we examine the theoretical foundations of ensemble methods, including bias–variance trade-offs, margin theory, and optimization-based frameworks, while analyzing computational trade-offs related to training complexity, inference efficiency, and storage requirements. To enhance accessibility, we provide a structured comparative summary of key ensemble techniques. Furthermore, we discuss emerging research directions, such as adaptive ensemble methods, hybrid deep learning approaches, and multimodal data fusion, as well as challenges related to interpretability, model selection, and handling noisy data in high-stakes applications. By integrating theoretical insights with practical considerations, this survey serves as a valuable resource for researchers and practitioners seeking to understand the evolving landscape of ensemble learning and its future prospects.",
+      "venue": "Mathematics",
+      "relevance": "medium",
+      "relevance_reason": "앙상블/부스팅 전반을 다루는 서베이로 과적합·일반화 같은 배경 설명에는 도움되지만 CatBoost의 ordered boosting과 symmetric tree라는 구체적 설계 요소를 직접 뒷받침하진 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1007/979-8-8688-2028-1_16",
+      "title": "Gradient Boosting with XGBoost, LightGBM, and CatBoost",
+      "authors": [
+        "Korstanje Joos"
+      ],
+      "year": 2025,
+      "venue": "Advanced Forecasting with Python",
+      "relevance": "medium",
+      "relevance_reason": "XGBoost/LightGBM/CatBoost를 비교·설명하는 자료일 가능성이 높아 CatBoost의 특징(ordered boosting, 대칭 트리, 범주형 처리)을 개괄적으로 인용하는 데는 도움이 될 수 있습니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.51219/jaimld/chinmay-shripad-kulkarni/29",
+      "title": "Advancing Gradient Boosting: A Comprehensive Evaluation of the CatBoost Algorithm for Predictive Modeling",
+      "authors": [
+        "Kulkarni Chinmay Shripad"
+      ],
+      "year": 2022,
+      "venue": "Journal of Artificial Intelligence, Machine Learning and Data Science",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost 알고리즘을 ‘종합 평가’하는 성격의 논문으로 보이며, CatBoost의 설계 특징과 장점(범주형/이질적 특성 처리, 과적합 완화)을 요약 인용하는 데는 비교적 적절할 수 있습니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.3390/s25237294",
+      "pmid": "41374669",
+      "pmcid": "PMC12694449",
+      "title": "Machine Learning for Sensor Analytics: A Comprehensive Review and Benchmark of Boosting Algorithms in Healthcare, Environmental, and Energy Applications.",
+      "authors": [
+        "Xie Y",
+        "Tummala SP."
+      ],
+      "year": 2025,
+      "abstract": "Sensor networks generate high-dimensional temporally dependent data across healthcare, environmental monitoring, and energy management, which demands robust machine learning for reliable forecasting. While gradient boosting methods have emerged as powerful tools for sensor-based regression, systematic evaluation under realistic deployment conditions remains limited. This work provides a comprehensive review and empirical benchmark of boosting algorithms spanning classical methods (AdaBoost and GBM), modern gradient boosting frameworks (XGBoost, LightGBM, and CatBoost), and adaptive extensions for streaming data and hybrid architectures. We conduct rigorous cross-domain evaluation on continuous glucose monitoring, urban air-quality forecasting, and building-energy prediction, assessing not only predictive accuracy but also robustness under sensor degradation, temporal generalization through proper time-series validation, feature-importance stability, and computational efficiency. Our analysis reveals fundamental trade-offs challenging conventional assumptions. Algorithmic sophistication yields diminishing returns when intrinsic predictability collapses due to exogenous forcing. Random cross-validation (CV) systematically overestimates performance through temporal leakage, with magnitudes varying substantially across domains. Calibration drift emerges as the dominant failure mode, causing catastrophic degradation across all the static models regardless of sophistication. Importantly, feature-importance stability does not guarantee predictive reliability. We synthesize the findings into actionable guidelines for algorithm selection, hyperparameter configuration, and deployment strategies while identifying critical open challenges, including uncertainty quantification, physics-informed architectures, and privacy-preserving distributed learning.",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost를 포함한 부스팅 알고리즘 리뷰/벤치마크로 배경 인용에는 유용할 수 있으나, ordered boosting와 symmetric(=oblivious) 트리라는 CatBoost 고유 설계를 직접 정의·설명하는 1차 출처로 보이진 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.3390/s25113549",
+      "pmid": "40969124",
+      "pmcid": "PMC12158380",
+      "title": "CB-MTE: Social Bot Detection via Multi-Source Heterogeneous Feature Fusion.",
+      "authors": [
+        "Cheng M",
+        "Xiao Y",
+        "Huang T",
+        "Lei C",
+        "Zhang C."
+      ],
+      "year": 2025,
+      "abstract": "Social bots increasingly mimic real users and collaborate in large-scale influence campaigns, distorting public perception and making their detection both critical and challenging. Traditional bot detection methods, constrained by single-source features, often fail to capture the complete behavioral and contextual characteristics of social bots, especially their dynamic behavioral evolution and group coordination tactics, resulting in feature incompleteness and reduced detection performance. To address this challenge, we propose CB-MTE, a social bot detection framework based on multi-source heterogeneous feature fusion. CB-MTE adopts a hierarchical architecture: user metadata is used to construct behavioral portraits, deep semantic representations are extracted from textual content via DistilBERT, and community-aware graph embeddings are learned through a combination of random walk and Skip-gram modeling. To mitigate feature redundancy and preserve structural consistency, manifold learning is applied for nonlinear dimensionality reduction, ensuring both local and global topology are maintained. Finally, a CatBoost-based collaborative reasoning mechanism enhances model robustness through ordered target encoding and symmetric tree structures. Experiments on the TwiBot-22 benchmark dataset demonstrate that CB-MTE significantly outperforms mainstream detection models in recognizing dynamic behavioral traits and detecting collaborative bot activities. These results confirm the framework's capability to capture the complete behavioral and contextual characteristics of social bots through multi-source feature integration.",
+      "relevance": "medium",
+      "relevance_reason": "초록에서 CatBoost의 ordered target encoding과 symmetric tree 구조를 명시하며 강건성 향상 맥락에서 언급해 해당 특성(특히 대칭 트리/이질적 특징 처리)을 뒷받침하는 응용 근거로는 유용합니다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1201/9781003493679-12",
+      "title": "Gradient Boosting",
+      "authors": [
+        "Ishwaran Hemant"
+      ],
+      "year": 2025,
+      "venue": "Multivariate Statistics",
+      "relevance": "medium",
+      "relevance_reason": "그래디언트 부스팅 전반을 다루는 장(챕터)로 보이며 CatBoost의 구체적 특징(ordered boosting, symmetric trees)을 직접 뒷받침하진 않지만 배경 설명에는 도움이 될 수 있습니다.",
+      "discovery_method": "initial_search"
+    }
+  ],
+  "search_log": [
+    {
+      "round": 1,
+      "type": "initial_search",
+      "queries": [
+        "CatBoost \"CatBoost: unbiased boosting with categorical features\" ordered boosting symmetric (oblivious) decision trees Prokhorenkova Dorogush Gulin",
+        "ordered boosting target leakage reduction overfitting gradient boosting \"CatBoost\" \"ordered target statistics\"",
+        "oblivious decision trees symmetric decision trees gradient boosting CatBoost comparison benchmark overfitting heterogeneous features categorical features"
+      ],
+      "papers_found": 120,
+      "papers_kept": 120,
+      "duration_seconds": 9.91
+    },
+    {
+      "round": 2,
+      "type": "relevance_filter",
+      "queries": [],
+      "papers_found": 120,
+      "papers_kept": 80,
+      "duration_seconds": 121.29
+    }
+  ],
+  "summary": "CatBoost의 ordered boosting, ordered target statistics(타깃 누수 감소), 그리고 대칭(=oblivious) 결정트리 구조가 과적합을 줄이면서 범주형·수치형이 혼재된 이질적 특성을 안정적으로 처리한다는 주장을 검증하기 위해 관련 키워드로 120편을 수집해 중복 제거 후 10편을 선별했다. 핵심 근거로는 Prokhorenkova 등(‘CatBoost: unbiased boosting with categorical features’)과 ordered boosting 알고리즘(Algorithm 2) 설명 자료, 그리고 ‘CatBoost for big data’ 리뷰가 해당 메커니즘과 성능/일반화 이점을 종합적으로 뒷받침했다."
+}

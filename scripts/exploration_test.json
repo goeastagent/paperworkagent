@@ -1,0 +1,161 @@
+{
+  "status": "success",
+  "issues": [],
+  "papers": [
+    {
+      "doi": "10.1109/itnt55410.2022.9848559",
+      "title": "Oblivious Piecewise-Linear Decision Trees",
+      "authors": [
+        "Gurianov Alexey"
+      ],
+      "year": 2022,
+      "venue": "2022 VIII International Conference on Information Technology and Nanotechnology (ITNT)",
+      "relevance": "high",
+      "relevance_reason": "Oblivious(대칭) 결정트리 변형을 다루는 제목으로 CatBoost의 ‘symmetric decision trees’ 구성요소와 직접적으로 맞닿아 있다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1109/access.2025.3610956",
+      "title": "Comparison of Complexity of Regular Versus Oblivious Decision Trees for Decision Tables With Many-Valued Decisions From Closed Classes",
+      "authors": [
+        "Ostonov Azimkhon",
+        "Moshkov Mikhail"
+      ],
+      "year": 2025,
+      "venue": "IEEE Access",
+      "relevance": "high",
+      "relevance_reason": "Oblivious(대칭) 결정트리의 복잡도를 비교하는 연구로 CatBoost의 대칭 트리 사용이라는 주장과 직접적으로 맞닿아 있다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.7717/peerj-cs.2829/table-102",
+      "title": "Algorithm 2 : Ordered boosting algorithm.",
+      "authors": [],
+      "year": 2025,
+      "relevance": "high",
+      "relevance_reason": "제목이 ‘Ordered boosting algorithm’ 자체로 CatBoost의 핵심인 ordered boosting을 직접 다루는 자료이므로, ordered boosting을 사용해 과적합을 줄인다는 주장과 매우 밀접하다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.51219/jaimld/chinmay-shripad-kulkarni/29",
+      "title": "Advancing Gradient Boosting: A Comprehensive Evaluation of the CatBoost Algorithm for Predictive Modeling",
+      "authors": [
+        "Kulkarni Chinmay Shripad"
+      ],
+      "year": 2022,
+      "venue": "Journal of Artificial Intelligence, Machine Learning and Data Science",
+      "relevance": "high",
+      "relevance_reason": "CatBoost 알고리즘 자체를 종합적으로 평가하는 논문으로 보이며, ordered boosting·대칭(대칭적) 트리·과적합 감소·이질적 특성 처리 같은 핵심 설계 특성을 직접 다룰 가능성이 높다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1109/access.2020.3033026",
+      "title": "FAMD: A Fast Multifeature Android Malware Detection Framework, Design, and Implementation",
+      "authors": [
+        "Hongpeng Bai",
+        "Nannan Xie",
+        "Xiaoqiang Di",
+        "Qing Ye"
+      ],
+      "year": 2020,
+      "abstract": "With Android's dominant position within the current smartphone OS, increasing number of malware applications pose a great threat to user privacy and security. Classification algorithms that use a single feature usually have weak detection performance. Although the use of multiple features can improve the detection effect, increasing the number of features increases the requirements of the operating environment and consumes more time. We propose a fast Android malware detection framework based on the combination of multiple features: FAMD (Fast Android Malware Detector). First, we extracted permissions and Dalvik opcode sequences from samples to construct the original feature set. Second, the Dalvik opcodes are preprocessed with the N-Gram technique, and the FCBF (Fast Correlation-Based Filter) algorithm based on symmetrical uncertainty is employed to reduce feature dimensionality. Finally, the dimensionality-reduced features are input into the CatBoost classifier for malware detection and family classification. The dataset DS-1, which we collected, and the baseline dataset Drebin were used in the experiment. The results show that the combined features can effectively improve the detection accuracy of malware that can reach 97.40% on Drebin dataset, and the malware family classification accuracy can achieve 97.38%. Compared with other state-of-the-art works, our framework achieves higher accuracy and lower time consumption.",
+      "venue": "IEEE Access",
+      "relevance": "medium",
+      "relevance_reason": "안드로이드 악성코드 탐지에 CatBoost를 적용한 응용 연구로 이질적 특징 처리 성능을 간접적으로 시사하지만, ordered boosting·대칭 트리 등 CatBoost의 핵심 메커니즘이나 과적합 감소 원리를 직접 다루지 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1002/smr.2665",
+      "title": "Software development effort estimation using boosting algorithms and automatic tuning of hyperparameters with Optuna",
+      "authors": [
+        "Maryam Hassanali",
+        "Mohammadreza Soltanaghaei",
+        "Taghi Javdani Gandomani",
+        "Farsad Zamani Boroujeni"
+      ],
+      "year": 2024,
+      "abstract": "Abstract Considering the increasing need for software projects, estimating software development efforts is essential and can lead to improved project delivery quality. Machine learning methods are widely used to improve the accuracy of estimation. The boosting method is an ensemble machine learning technique less used in this field. In this research, five boosting algorithms including Adaboost, Gradient boosting, XGBoost, LightGBM, and CatBoost were implemented with the hyperparameter tuning framework Optuna on the ISBSG database. The Optuna is a next‐generation optimization method for automatically tuning hyperparameters of algorithms. Six evaluation criteria MMRE, MdMRE, MAE, MSE, Pred(0.25), and SA were used to evaluate the findings. The results show that the hyperparameter automatic tuning by Optuna increases the accuracy of prediction provided by all five models. When the Catboost algorithm uses Optuna to tune its hyperparameters has made the best prediction among the five algorithms studied in this research. Using Optuna, compared to the case where the algorithm uses its default settings, the highest percentage of prediction improvement was observed in the XGBoost algorithm (except for the SA criterion). Based on the criteria of MMRE, Pred(0.25), and SA, this study has a better prediction than some relatively similar articles.",
+      "venue": "Journal of Software Evolution and Process",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost를 다른 부스팅들과 비교·튜닝해 성능을 보고하지만, ordered boosting 및 symmetric tree 구조가 이질적 특징 처리와 과적합 감소에 기여한다는 주장 자체를 설명하거나 검증하지는 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1109/access.2024.3367744",
+      "title": "Predicting the Type of Road Traffic Accident for Test Scenario Generation",
+      "authors": [
+        "Maximilian Bäumler",
+        "Günther Prokop"
+      ],
+      "year": 2024,
+      "abstract": "Automated driving systems should be able to avoid road traffic accidents and drive more safely than human drivers do. Test scenarios derived from real-world data such as police accident data can help assess the safety performance of automated driving systems. In many countries, the police collect data and information about nearly every accident, resulting in a representative sample. However, the collected accident data often do not contain the exact conflicts that cause an accident. Therefore, we estimated the globally known three-digit accident type for German police accident data, describing accident-causing conflicts. The data supplemented by the estimated three-digit accident type can then be used in subsequent test scenario generation. Accordingly, this study presents the first classification model for predicting 30 types of turning accidents. We tested a CatBoost model and a large-language model called BERT, using different feature sets and model designs. Overall, the CatBoost model performed best when using accident descriptions and non-text features such as collision type. Anomaly detection performed before model training revealed additional knowledge-driven miscoding in the police data collection. In conclusion, the model can predict common accident types, such as left-turns with an oncoming straight-ahead driver. In contrast, the model fails to predict rare accident types, such as left-turns (with a lit arrow sign) with oncoming traffic. Future studies should focus on optimizing the developed model, handling data imbalances, and building models using police accident data from other countries.",
+      "venue": "IEEE Access",
+      "relevance": "medium",
+      "relevance_reason": "텍스트와 비텍스트가 섞인 이질적 특징에서 CatBoost가 좋은 성능을 보였다는 점은 주장과 부분적으로 맞지만, ordered boosting 및 symmetric tree에 기반한 과적합 감소를 직접 논의하지 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.54254/2753-7048/2026.hz30778",
+      "title": "Machine Learning-based Downscaling of Sentinel-5P CO Over Beijing Using LightGBM, CatBoost and Ridge",
+      "authors": [
+        "H. Y. Wu"
+      ],
+      "year": 2025,
+      "abstract": "Urban health studies require near-surface carbon monoxide (CO) at high spatial resolution, but satellite products mainly provide total-column information. This study develops a machine learning-based downscaling framework to estimate daily mean near-surface CO over Beijing on a 3 km grid by combining Sentinel-5P/TROPOMI Level-2 CO, ERA5 reanalysis and ChinaHighCO ground observations. Grid-day samples (134,282 in 2023) are described by 50 predictors, including TROPOMI column statistics, dynamically aligned boundary-layer meteorology, and temporal indicators. Three regression models are comparedLightGBM, CatBoost and Ridge regressionunder a rolling monthly cross-validation scheme in which each validation month is predicted using only past data. Model skill is assessed using out-of-fold coefficients of determination (R), root mean square error (RMSE), month-wise R and spatial error patterns. The best configuration, a LightGBM model using a compact core ERA5 + hS5P predictor set, achieves a global R of 0.56 and RMSE of 0.13 mg m, with month-wise R remaining between about 0.40 and 0.62. Adding the full ERA5 predictor set further increases global R to about 0.66. Feature-importance analysis highlights the dominant role of TROPOMI columns, spatial coordinates, wind direction and seasonal indicators, demonstrating the potential of physically informed tree-ensemble models for urban CO downscaling.",
+      "venue": "Lecture Notes in Education Psychology and Public Media",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost를 다른 모델들과 비교 적용한 응용 연구로서 CatBoost의 장점(이질적 특성 처리 등)을 간접적으로 보여주지만 ordered boosting·대칭 트리 같은 핵심 메커니즘 설명은 없다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1038/s41598-025-97720-x",
+      "pmid": "40301394",
+      "pmcid": "PMC12041379",
+      "title": "MetaStackD A robust meta learning based deep ensemble model for prediction of sensors battery life in IoE environment.",
+      "authors": [
+        "Gayathri D",
+        "Shantharajah SP."
+      ],
+      "year": 2025,
+      "abstract": "Advancements in Artificial Intelligence, Machine Learning, and Deep Learning have paved the way for ample applications in real-time. One of the major applications of this advancement is the innovative systems influenced by the Internet of Everything (IoE). The IoE environment greatly relies on the interconnection of an enormous number of sensors that are used for collecting and transmitting data. The data gathered helps for monitoring, decision-making, and automation of smart systems in multi-disciplinary domains. These sensors operate on battery power. The battery life of the sensors limits their efficiency in operation. The mechanism for analyzing the Remaining Battery Life (RBL) plays a major role in optimizing the network performance, thereby ensuring the reliability and availability of data throughout. This work focuses on proposing a novel framework integrating pre-processing, standardization, encoding scheme, and predictive modeling that includes two algorithms, RFRImpute and MetaStackD, for predicting the RBL of sensors in any IoE device using a meta-learning-based deep ensemble approach blue for analyzing factors such as power consumption, environmental conditions, operational frequency, and workload patterns. Leveraging regression algorithms such as Random Forest, Gradient Boosting, Light Gradient Boosting, Categorical Boosting and Extreme Gradient Boosting, we have modeled the non-linear and temporal dynamics of sensor battery degradation, thereby enabling proactive maintenance strategies, dynamic energy management, and resource allocation. Experimental results on the real-world Chicago Park District Beach water IoE dataset validate the effectiveness of our proposed approach, showing a 1.4% improvement in accuracy over the traditional voting ensemble model and a 93.3% reduction in training time as well as prediction time. The model size is reduced by 95.23% when compared to traditional voting ensembles.",
+      "relevance": "medium",
+      "relevance_reason": "CatBoost를 포함한 여러 부스팅/앙상블 모델을 비교·활용하지만, ordered boosting이나 대칭(Oblivious) 트리 등 CatBoost의 핵심 설계로 과적합을 줄이는 메커니즘을 직접 다루지는 않는다.",
+      "discovery_method": "initial_search"
+    },
+    {
+      "doi": "10.1007/978-1-84628-766-4_8",
+      "title": "Avoiding Overfitting of Decision Trees",
+      "authors": [
+        "Bramer Max"
+      ],
+      "year": 2007,
+      "venue": "Principles of Data Mining",
+      "relevance": "medium",
+      "relevance_reason": "결정트리의 과적합 방지에 초점을 둔 것으로 보이며 ‘과적합 감소’ 측면에서는 관련이 있으나 CatBoost의 ordered boosting이나 대칭 트리 구조와의 직접 연결은 없다.",
+      "discovery_method": "initial_search"
+    }
+  ],
+  "search_log": [
+    {
+      "round": 1,
+      "type": "initial_search",
+      "queries": [
+        "CatBoost ordered boosting symmetric (oblivious) decision trees reduced overfitting heterogeneous features paper",
+        "ordered boosting target leakage reduction gradient boosting categorical features CatBoost methodology",
+        "oblivious decision trees symmetric trees gradient boosting comparison benchmark overfitting generalization"
+      ],
+      "papers_found": 133,
+      "papers_kept": 133,
+      "duration_seconds": 7.11
+    },
+    {
+      "round": 2,
+      "type": "relevance_filter",
+      "queries": [],
+      "papers_found": 133,
+      "papers_kept": 96,
+      "duration_seconds": 128.87
+    }
+  ],
+  "summary": "CatBoost의 ‘ordered boosting’과 대칭(=oblivious) 결정트리 구조가 타깃 누수/과적합을 줄이고 이질적(특히 범주형 포함) 특성 처리에 강점이 있다는 주장을 검증하기 위해 관련 키워드로 3개 쿼리를 수행했으며, 중복 제거 후 133편 중 10편을 최종 선별했다. 최종 문헌은 ordered boosting 알고리즘(예: “Algorithm 2: Ordered boosting algorithm”)과 oblivious/대칭 트리의 성질 및 복잡도·일반화 비교(예: “Oblivious Piecewise-Linear Decision Trees”, “Comparison of Complexity of Regular Versus Oblivious Decision Trees…”)를 중심으로 CatBoost의 과적합 완화 및 특성 처리 근거를 뒷받침한다."
+}
